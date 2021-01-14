@@ -13,6 +13,15 @@ public class EmpleadoED_45136170G {
         this.dni = dni;
     }
 
+    public double getSalarioEsteMes(int horasExtra) {
+        double cantidadExtra, salarioFinal;
+        cantidadExtra = horasExtra * this.salarioBasePorHora * FACTOR_HORA_EXTRA;
+        salarioFinal = this.salarioBasePorHora * 40 * 4 + cantidadExtra;
+        salarioFinal = (double) Math.round(salarioFinal * 100d) / 100d;
+        return salarioFinal;
+
+    }
+
     public static void main(String[] args) {
         EmpleadoED_45136170G emp = new EmpleadoED_45136170G("ALBA MARRADES", "45136170G");
         int horasExtra = 2;
